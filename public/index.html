@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fuego y Lima | Restaurante</title>
+
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:#0b0b0d;
+      color:#fff;
+      line-height:1.4;
+    }
+    a{text-decoration:none;color:inherit}
+    img{display:block;width:100%}
+
+    .wrap{max-width:1100px;margin:auto;padding:24px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:#0b0b0de8;
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #ffffff18;
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+    }
+    .brand{
+      font-weight:800;
+      font-size:20px;
+      letter-spacing:.3px;
+    }
+    .btn{
+      background:#ffb000;
+      color:#111;
+      padding:12px 18px;
+      border-radius:14px;
+      font-weight:700;
+      display:inline-block;
+      text-align:center;
+      border:0;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid #ffffff22;
+    }
+
+    /* HERO */
+    .hero{
+      min-height:80vh;
+      background:
+        linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      display:flex;
+      align-items:center;
+    }
+    .hero-box{
+      max-width:560px;
+      background:rgba(0,0,0,.55);
+      padding:32px;
+      border-radius:22px;
+      border:1px solid #ffffff18;
+    }
+    h1{
+      margin:0 0 12px;
+      font-size:40px;
+      line-height:1.1;
+    }
+    p{color:#ddd;margin:0 0 18px}
+
+    section{padding:70px 0}
+    h2{margin:0 0 28px;font-size:30px}
+
+    /* SERVICIOS */
+    .grid3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .card{
+      background:#14141b;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid #ffffff12;
+    }
+    .card img{
+      height:220px;
+      object-fit:cover;
+      background:#101018;
+    }
+    .card div{
+      padding:18px;
+    }
+
+    /* GALERÍA: sin huecos */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .gitem{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid #ffffff12;
+      background:#101018;
+    }
+    .gitem img{
+      height:260px;
+      object-fit:cover;
+      width:100%;
+      display:block;
+    }
+
+    /* CONTACTO */
+    .contact{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+    input,select,textarea{
+      width:100%;
+      padding:14px;
+      border-radius:14px;
+      border:1px solid #ffffff12;
+      background:#111118;
+      color:#fff;
+      margin-bottom:12px;
+      font-size:14px;
+      outline:none;
+    }
+    textarea{min-height:120px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:#ffb00055}
+
+    .chiprow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    footer{
+      border-top:1px solid #ffffff18;
+      padding:28px;
+      text-align:center;
+      color:#aaa;
+    }
+
+    @media(max-width:900px){
+      .grid3{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .contact{grid-template-columns:1fr}
+      h1{font-size:32px}
+    }
+    @media(max-width:480px){
+      .gallery{grid-template-columns:1fr}
+      .gitem img{height:240px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Fuego y Lima</div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <a class="btn btn-ghost" href="#contacto">Reservar</a>
+      <a class="btn" id="waTop" href="#" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-box">
+      <h1>Restaurante con sabor premium</h1>
+      <p>Reserva tu mesa o pide para llevar por WhatsApp. Respuesta rápida y atención directa.</p>
+      <div class="chiprow">
+        <a class="btn" id="waReservaHero" href="#">Reservar por WhatsApp</a>
+        <a class="btn btn-ghost" id="waPedidoHero" href="#">Pedir para llevar</a>
+      </div>
+      <p style="margin-top:14px;color:#cfcfe0">
+        Horario: Lun–Sáb 1:00 pm–10:00 pm · Ubicación: (pon dirección aquí)
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIONES -->
+<section id="servicios">
+  <div class="wrap">
+    <h2>Lo que puedes hacer</h2>
+    <div class="grid3">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1555243896-c709bfa0b564?auto=format&fit=crop&w=1200&q=80" alt="Reservaciones">
+        <div>
+          <h3>Reservar mesa</h3>
+          <p>Confirma disponibilidad en segundos por WhatsApp.</p>
+          <a class="btn" id="waReservaCard" href="#" style="margin-top:10px;">Reservar ahora</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Pedido para llevar">
+        <div>
+          <h3>Pedir para llevar</h3>
+          <p>Manda tu orden por WhatsApp y te decimos tiempo de entrega.</p>
+          <a class="btn" id="waPedidoCard" href="#" style="margin-top:10px;">Hacer pedido</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?auto=format&fit=crop&w=1200&q=80" alt="Menú">
+        <div>
+          <h3>Pedir menú</h3>
+          <p>Te mandamos el menú actualizado por WhatsApp.</p>
+          <a class="btn" id="waMenuCard" href="#" style="margin-top:10px;">Pedir menú</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <div class="wrap">
+    <h2>Galería</h2>
+
+    <div class="gallery" id="gallery">
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80" alt="Platillo gourmet"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=1200&q=80" alt="Alta cocina"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1200&q=80" alt="Presentación elegante"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1200&q=80" alt="Cocina de autor"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" alt="Fine dining"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=1200&q=80" alt="Experiencia gastronómica"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1543353071-087092ec393a?auto=format&fit=crop&w=1200&q=80" alt="Catering profesional"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80" alt="Platillo premium"></div>
+      <div class="gitem"><img src="https://images.unsplash.com/photo-1604908554164-6f40d1c0d7d0?auto=format&fit=crop&w=1200&q=80" alt="Evento gastronómico"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap contact">
+    <div>
+      <h2>Reserva o pide por WhatsApp</h2>
+      <p>Te atendemos rápido. Elige lo que necesitas y te abrimos WhatsApp con el mensaje listo.</p>
+
+      <div class="chiprow">
+        <a class="btn" id="waReservaContacto" href="#">Reservar mesa</a>
+        <a class="btn btn-ghost" id="waPedidoContacto" href="#">Pedido para llevar</a>
+        <a class="btn btn-ghost" id="waMenuContacto" href="#">Pedir menú</a>
+      </div>
+
+      <p style="margin-top:14px;color:#cfcfe0">
+        WhatsApp: <b>664 339 8290</b><br>
+        Dirección: (pon dirección aquí)<br>
+        Horario: Lun–Sáb 1:00 pm–10:00 pm
+      </p>
+    </div>
+
+    <div>
+      <form id="leadForm">
+        <input id="nombre" placeholder="Nombre" required>
+        <input id="telefono" placeholder="Tu WhatsApp" required>
+
+        <select id="motivo" required>
+          <option value="" disabled selected>¿Qué necesitas?</option>
+          <option value="Reservación">Reservación</option>
+          <option value="Pedido para llevar">Pedido para llevar</option>
+          <option value="Menú">Menú</option>
+          <option value="Cotización catering">Cotización catering</option>
+        </select>
+
+        <input id="fecha" type="date" placeholder="Fecha (si aplica)">
+        <input id="hora" type="time" placeholder="Hora (si aplica)">
+        <input id="personas" type="number" min="1" placeholder="Personas (si aplica)">
+
+        <textarea id="detalles" placeholder="Mensaje (opcional): ejemplo: ‘mesa en terraza’, ‘sin picante’, ‘para 2’, ‘pedido: 2 tacos…’"></textarea>
+
+        <button class="btn" type="submit">Enviar por WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Fuego y Lima · Restaurante
+</footer>
+
+<script>
+  // 1) Si una imagen no carga, se elimina su contenedor para que NO quede cuadro vacío
+  (function () {
+    const gallery = document.getElementById("gallery");
+    if (!gallery) return;
+    const imgs = gallery.querySelectorAll("img");
+    imgs.forEach(img => {
+      const kill = () => {
+        const box = img.closest(".gitem");
+        if (box) box.remove();
+      };
+      img.addEventListener("error", kill, { once: true });
+      img.addEventListener("load", () => {
+        if (!img.naturalWidth || !img.naturalHeight) kill();
+      }, { once: true });
+      if (img.complete && (!img.naturalWidth || !img.naturalHeight)) kill();
+    });
+  })();
+
+  // 2) WhatsApp con mensaje pre-escrito
+  const WA_NUMBER = "5216643398290";
+  function wa(text){
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+  }
+
+  // Mensajes
+  const msgTop = "Hola 👋 Me interesa información del restaurante Fuego y Lima. ¿Me apoyas por favor?";
+  const msgReserva = "Hola 👋 Quiero hacer una RESERVACIÓN.\nNombre: ____\nFecha: ____\nHora: ____\nPersonas: ____\nPreferencia (terraza/interior): ____";
+  const msgPedido = "Hola 👋 Quiero hacer un PEDIDO PARA LLEVAR.\nNombre: ____\nPedido: ____\n¿Tiempo estimado y total, por favor?";
+  const msgMenu = "Hola 👋 ¿Me puedes enviar el MENÚ actualizado, por favor?";
+
+  // Botones
+  const setLink = (id, msg) => {
+    const el = document.getElementById(id);
+    if (el) el.href = wa(msg);
+  };
+
+  setLink("waTop", msgTop);
+  setLink("waReservaHero", msgReserva);
+  setLink("waPedidoHero", msgPedido);
+  setLink("waReservaCard", msgReserva);
+  setLink("waPedidoCard", msgPedido);
+  setLink("waMenuCard", msgMenu);
+  setLink("waReservaContacto", msgReserva);
+  setLink("waPedidoContacto", msgPedido);
+  setLink("waMenuContacto", msgMenu);
+
+  // Formulario -> WhatsApp
+  document.getElementById("leadForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const nombre = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const motivo = document.getElementById("motivo").value;
+    const fecha = document.getElementById("fecha").value;
+    const hora = document.getElementById("hora").value;
+    const personas = document.getElementById("personas").value.trim();
+    const detalles = document.getElementById("detalles").value.trim();
+
+    const mensaje =
+`Hola 👋 Quiero contactarlos.
+Motivo: ${motivo}
+Nombre: ${nombre}
+Mi WhatsApp: ${telefono}${fecha ? `\nFecha: ${fecha}` : ""}${hora ? `\nHora: ${hora}` : ""}${personas ? `\nPersonas: ${personas}` : ""}${detalles ? `\nMensaje: ${detalles}` : ""}`;
+
+    window.open(wa(mensaje), "_blank", "noopener,noreferrer");
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
